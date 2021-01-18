@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import filterReducer from './IndividualView/Filter/filterReducer'
-import activityReducer from './IndividualView/ActivityView/activityReducer'
+import filterReducer from './Filter/filterReducer'
+import activityReducer from './ActivityView/activityReducer'
 
 const rootReducer = combineReducers({
     filters: filterReducer,

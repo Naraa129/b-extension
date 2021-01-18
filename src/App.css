@@ -9,13 +9,23 @@
 .filter-container{
   background: blueviolet;
   padding: 5px;
+  height: 30px;
 }
 
 .table-container{
-  background: pink;
   padding:5px;
+  overflow: scroll;
+  height: 70%;
 }
 
 .activity-item {
   padding: 5px 0px 5px 20px;
+}
+
+.filter {
+  padding: 10px;
+}
+
+.filter-title {
+  padding: 5px;
 }
