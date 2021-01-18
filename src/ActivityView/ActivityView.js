@@ -5,17 +5,17 @@ import { getDurationByOrgAndSystem } from './activityReducer'
 const ActivityView = () => {
 
     const activities = useSelector(getDurationByOrgAndSystem);
-    
-    const items = activities.map((item, index) => {
-        if(item.organizations.length > 1)
-            console.log(item.organizations);
+    const { organization, system, dateRange } = useSelector((state) => state.filters)
+    console.log(system)
+    const items = activities.filter(item => item.system.toLowerCase().includes(system))
+    const itemsRendered = items.map((item, index) => {
         return <div className='activity-item' key={index}>
                     <span>{item.system}</span>
                     <span>5%</span>
                     </div>
     })
     return <div>
-            {items}
+            {itemsRendered}
         </div>
 }
 

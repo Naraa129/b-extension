@@ -5,6 +5,7 @@ The scope of this project is to allow user quickly access his/her recent activit
 
 ## How to run
  * If you are not in /extension-ui directory, first `cd extension-ui`.
+ * To install the dependencies, run `npm install`
  * Then you can run `npm start` to start the development server.
  
  

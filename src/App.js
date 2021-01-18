@@ -2,11 +2,11 @@ import logo from './logo.svg'
 import './App.css'
 import React from 'react'
 import IndividualView from './IndividualView/IndividualView'
-import Header from './IndividualView/Header'
+import Header from './Header/Header'
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header/>
       <IndividualView/>
     </div>

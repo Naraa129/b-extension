@@ -28,27 +28,31 @@ export const fetchAll = activities => {
     }
 }
 
+export const normalizedData = result => {
+    const org = new schema.Entity('organizations');
+    const mySchema = [{ organizations: [org] }];
+    const normalizedData = normalize(result, mySchema);
+    return {
+        data: normalizedData.result, 
+        orgs: normalizedData.entities.organizations
+    }
+}
+
 export async function fetchActivities(dispatch, getState) {
     fetch('https://fast-dusk-45749.herokuapp.com/activities')
     .then(res => res.json())
     .then(
         (result) => {
-            const org = new schema.Entity('organizations');
-            const mySchema = [{ organizations: [org] }];
-            const normalizedData = normalize(result, mySchema);
-            dispatch(fetchAll({
-                data: normalizedData.result, 
-                orgs: normalizedData.entities.organizations
-            }))
+            dispatch(fetchAll(normalizedData(result)))
         }
     )
 }
 
 export const getDurationByOrgAndSystem = createSelector(
     state => state.activities,
-    state => state.filters.organization,
-    (activities, organization) => {
-        const test = activities.data.filter(entry => entry.organizations.indexOf(Number(organization))>-1 ? true : false)
+    state => state.filters,
+    (activities, filters) => {
+        const test = activities.data.filter(entry => entry.organizations.indexOf(Number(filters.organization))>-1)
         return test
     }
 )

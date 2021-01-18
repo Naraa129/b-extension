@@ -11,10 +11,26 @@ export const orgChanged = org => {
     }
 }
 
+export const sysChanged = sys => {
+    return {
+        type: 'sysChanged',
+        payload: sys
+    }
+}
+
 export default function filterReducer(state = initialState, action) {
     switch(action.type) {
         case 'orgChanged': {
-            return { organization: action.payload}
+            return { 
+                ...state,
+                organization: action.payload 
+                }
+        }
+        case 'sysChanged': {
+            return { 
+                ...state,
+                system: action.payload
+            }
         }
         default:
             return state;
