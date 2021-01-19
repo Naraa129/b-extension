@@ -3,16 +3,11 @@ import Filter from '../Filter/Filter'
 
 const Header = () => {
     
-    const [status, setStatus] = useState('')
-
-    let isLoading = status === 'loading'
-    let loading = isLoading ? <div>Loading ...</div> : null
     return (
         <header className='header'>
-            Retainai Individual View
-            {loading}
+            Retainai Individual View By Nara Bayarsaikhan
             <div>
-                <div className='filter-title'>Filters</div>
+                <div className='filter-title'>See what you are working on lately?</div>
                 <Filter/>
                 </div>
             </header>
