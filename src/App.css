@@ -7,7 +7,6 @@
 }
 
 .filter-container{
-  background: blueviolet;
   padding: 5px;
   height: 30px;
 }
@@ -18,14 +17,43 @@
   height: 70%;
 }
 
-.activity-item {
-  padding: 5px 0px 5px 20px;
-}
-
 .filter {
   padding: 10px;
 }
+.filter .selected {
+  background: rgb(68, 68, 248);
+  color: white;
+}
+.activity-item{
+  position: relative;
+  width: 160px;
+  height: 100px;
+  display: inline-block;
+  background:rgb(226, 225, 225);
+  margin: 10px;
+  text-align: center;
+}
+.activity-item .percentage{
+  position: absolute;
+  width: 160px;
+  height: 0%;
+  background: blue;
+  bottom: 0px;
+  opacity: 0.5;
+}
+.activity-item .system-name{
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
 
-.filter-title {
-  padding: 5px;
+.filter-title { 
+  color: blue;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.system-filter-textbox{
+  margin: 10px;
 }
